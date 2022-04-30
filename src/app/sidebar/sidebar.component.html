@@ -1,0 +1,37 @@
+<div
+  class="flex flex-col flex-grow pt-5 overflow-y-auto bg-white border-r border-gray-200"
+>
+  <div class="flex items-center flex-shrink-0 px-4">
+    <img
+      class="w-auto h-8"
+      src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+      alt="Workflow"
+    />
+  </div>
+  <div class="flex flex-col flex-grow mt-5">
+    <nav class="flex-1 px-2 pb-4 space-y-1">
+      <a
+        *ngFor="let item of navList"
+        routerLink="{{ item.path }}"
+        class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+      >
+        <svg
+          class="flex-shrink-0 w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-500"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+          />
+        </svg>
+        {{ item.name }}
+      </a>
+    </nav>
+  </div>
+</div>
