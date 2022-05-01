@@ -6,7 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
-  categories: string[] = ["Men", "Women", "Children"];
+  categories: any = [
+    {
+      index: '0',
+      id: "men",
+      name: "Men"
+    },
+    {
+      index: '1',
+      id: "women",
+      name: "Women"
+    },
+    {
+      index: '2',
+      id: "children",
+      name: "Children"
+    },
+  ];
 
   constructor() { }
 

@@ -28,14 +28,6 @@ const routes: Routes = [
   {
     path: 'accounts',
     component: AccountsComponent
-  },
-  {
-    path: 'gift',
-    component: GiftCardComponent
-  },
-  {
-    path: 'corporate',
-    component: CorporateRequirementsComponent
   }
 ];
 

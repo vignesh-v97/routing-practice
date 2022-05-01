@@ -12,6 +12,7 @@ import { GiftCardComponent } from './gift-card/gift-card.component';
 import { CorporateRequirementsComponent } from './corporate-requirements/corporate-requirements.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { AccountsRoutingModule } from './accounts/accounts-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AccountsRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
