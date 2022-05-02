@@ -11,8 +11,8 @@ import { ConfirmationDialog } from '../dialog/confirmation-dialog-component';
   styleUrls: ['./category-product-listing.component.scss']
 })
 export class CategoryProductListingComponent implements OnInit {
-  productIndex: any;
-  productCategoryValue: any;
+  productIndex: number | null = null;
+  productCategoryValue: string | null = null;
 
   productItems: any = [
     {
@@ -73,12 +73,18 @@ export class CategoryProductListingComponent implements OnInit {
   ngOnInit(): void {
     // this.productCategoryValue = this.router.snapshot.paramMap.get('id');
     this.router.queryParams.subscribe(params => {
-      this.productIndex = params['index']
+      this.productIndex = parseInt(params['index']);
     })
 
     this.router.paramMap.subscribe(params => {
       this.productCategoryValue = params.get("id")
     })
+    console.log(this.productIndex);
+    console.log(this.productCategoryValue)
+    if(this.productIndex == null || this.productCategoryValue == null) return
+    this.productItems[this.productIndex][this.productCategoryValue].forEach((element: any) => {
+      console.log(element.id)
+    });
   }
 
   // openDialog() {

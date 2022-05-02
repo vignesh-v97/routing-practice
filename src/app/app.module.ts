@@ -21,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppComponent,
     HomeComponent,
     CategoryComponent,
+    CategoryProductListingComponent,
     ProductPreviewComponent,
     AccountsComponent,
     GiftCardComponent,

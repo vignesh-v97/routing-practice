@@ -8,7 +8,7 @@
     >
       <div
         class=""
-        *ngFor="let item of productItems[productIndex].productCategoryValue"
+        *ngFor="let item of productItems[productIndex!][productCategoryValue!]"
       >
         <a routerLink="" class="group">
           <div
