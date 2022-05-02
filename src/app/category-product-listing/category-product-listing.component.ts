@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+// import { VERSION, MatDialogRef, MatSnackBar, MAT_DIALOG_DATA } from '@angular/material';
+import { ConfirmationDialog } from '../dialog/confirmation-dialog-component';
+
 
 @Component({
   selector: 'app-category-product-listing',
@@ -61,7 +65,9 @@ export class CategoryProductListingComponent implements OnInit {
     }
   ];
   constructor(
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    private dialog: MatDialog,
+    // private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -74,4 +80,30 @@ export class CategoryProductListingComponent implements OnInit {
       this.productCategoryValue = params.get("id")
     })
   }
+
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(ConfirmationDialog,{
+  //     data:{
+  //       message: 'Are you sure want to delete?',
+  //       buttonText: {
+  //         ok: 'Save',
+  //         cancel: 'No'
+  //       }
+  //     }
+  //   });
+  //   const snack = this.snackBar.open('Snack bar open before dialog');
+
+  //   dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+  //     if (confirmed) {
+  //       snack.dismiss();
+  //       const a = document.createElement('a');
+  //       a.click();
+  //       a.remove();
+  //       snack.dismiss();
+  //       this.snackBar.open('Closing snack bar in a few seconds', 'Fechar', {
+  //         duration: 2000,
+  //       });
+  //     }
+  //   });
+  // }
 }

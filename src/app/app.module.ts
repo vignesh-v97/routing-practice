@@ -13,24 +13,27 @@ import { CorporateRequirementsComponent } from './corporate-requirements/corpora
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AccountsRoutingModule } from './accounts/accounts-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CategoryComponent,
-    CategoryProductListingComponent,
     ProductPreviewComponent,
     AccountsComponent,
     GiftCardComponent,
     CorporateRequirementsComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AccountsRoutingModule
+    AccountsRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
