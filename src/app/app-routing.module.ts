@@ -4,6 +4,7 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { CategoryProductListingComponent } from './category-product-listing/category-product-listing.component';
 import { CategoryComponent } from './category/category.component';
 import { CorporateRequirementsComponent } from './corporate-requirements/corporate-requirements.component';
+import { DialogComponent } from './dialog/dialog.component';
 import { GiftCardComponent } from './gift-card/gift-card.component';
 import { HomeComponent } from './home/home.component';
 import { ProductPreviewComponent } from './product-preview/product-preview.component';
@@ -28,11 +29,16 @@ const routes: Routes = [
   {
     path: 'accounts',
     component: AccountsComponent
+  },
+  {
+    path: 'preview/dialog',
+    component: DialogComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot((routes), { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes),],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

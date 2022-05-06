@@ -14,7 +14,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AccountsRoutingModule } from './accounts/accounts-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
+import { ConfirmationDialog } from './dialog/confirmation-dialog-component';
 
 @NgModule({
   declarations: [
@@ -28,15 +31,18 @@ import { MatDialogModule } from '@angular/material/dialog';
     CorporateRequirementsComponent,
     NavbarComponent,
     SidebarComponent,
+    ConfirmationDialog
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AccountsRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule
   ],
-  providers: [],
+  entryComponents: [ConfirmationDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

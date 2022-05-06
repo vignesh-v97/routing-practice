@@ -1,5 +1,6 @@
-import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Component } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ConfirmationDialog } from './confirmation-dialog-component';
 
 @Component({
   selector: 'app-dialog',
@@ -7,21 +8,21 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-  message: string = ""
-  cancelButtonText = "Cancel"
-  constructor(
-    @Inject(MAT_DIALOG_DATA) private data: any,
-    private dialogRef: MatDialogRef<DialogComponent>) {
-    if (data) {
-      this.message = data.message || this.message;
-      if (data.buttonText) {
-        this.cancelButtonText = data.buttonText.cancel || this.cancelButtonText;
+  matDialogRef: MatDialogRef<ConfirmationDialog> | undefined;
+  name: string = "";
+  constructor(private matDialog: MatDialog) {}
+  OpenModal() {
+    this.matDialogRef = this.matDialog.open(ConfirmationDialog, {
+      data: { name: this.name },
+      disableClose: true
+    });
+
+    this.matDialogRef.afterClosed().subscribe((res: boolean) => {
+      if ((res == true)) {
+        this.name = "";
       }
-    }
-    this.dialogRef.updateSize('300vw','300vw')
+    });
   }
 
-  onConfirmClick(): void {
-    this.dialogRef.close(true);
-  }
+  ngOnInit() {}
 }

@@ -10,7 +10,11 @@
         class=""
         *ngFor="let item of productItems[productIndex!][productCategoryValue!]"
       >
-        <a routerLink="" class="group">
+        <a
+          [routerLink]="['/preview']"
+          [queryParams]="{ product: item.name }"
+          class="group"
+        >
           <div
             class="w-full overflow-hidden bg-gray-200 rounded-lg aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8"
           >
@@ -28,7 +32,3 @@
     </div>
   </div>
 </div>
-
-<p>
-  <!-- <button mat-button (click)="openDialog()">Open Confirm Dialog</button> -->
-</p>

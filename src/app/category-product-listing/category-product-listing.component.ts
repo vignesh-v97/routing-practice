@@ -66,12 +66,9 @@ export class CategoryProductListingComponent implements OnInit {
   ];
   constructor(
     private router: ActivatedRoute,
-    private dialog: MatDialog,
-    // private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
-    // this.productCategoryValue = this.router.snapshot.paramMap.get('id');
     this.router.queryParams.subscribe(params => {
       this.productIndex = parseInt(params['index']);
     })
@@ -79,37 +76,5 @@ export class CategoryProductListingComponent implements OnInit {
     this.router.paramMap.subscribe(params => {
       this.productCategoryValue = params.get("id")
     })
-    console.log(this.productIndex);
-    console.log(this.productCategoryValue)
-    if(this.productIndex == null || this.productCategoryValue == null) return
-    this.productItems[this.productIndex][this.productCategoryValue].forEach((element: any) => {
-      console.log(element.id)
-    });
   }
-
-  // openDialog() {
-  //   const dialogRef = this.dialog.open(ConfirmationDialog,{
-  //     data:{
-  //       message: 'Are you sure want to delete?',
-  //       buttonText: {
-  //         ok: 'Save',
-  //         cancel: 'No'
-  //       }
-  //     }
-  //   });
-  //   const snack = this.snackBar.open('Snack bar open before dialog');
-
-  //   dialogRef.afterClosed().subscribe((confirmed: boolean) => {
-  //     if (confirmed) {
-  //       snack.dismiss();
-  //       const a = document.createElement('a');
-  //       a.click();
-  //       a.remove();
-  //       snack.dismiss();
-  //       this.snackBar.open('Closing snack bar in a few seconds', 'Fechar', {
-  //         duration: 2000,
-  //       });
-  //     }
-  //   });
-  // }
 }
