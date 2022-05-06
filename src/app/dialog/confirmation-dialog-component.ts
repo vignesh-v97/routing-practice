@@ -10,6 +10,7 @@ export class ConfirmationDialog {
     private _mdr: MatDialogRef<ConfirmationDialog>,
     @Inject(MAT_DIALOG_DATA) data: string
   ) {
+
   }
   CloseDialog() {
     this._mdr.close(false)
