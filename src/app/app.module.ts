@@ -18,6 +18,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
 import { ConfirmationDialog } from './dialog/confirmation-dialog-component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ConfirmationDialog } from './dialog/confirmation-dialog-component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     AccountsRoutingModule,
     BrowserAnimationsModule,
