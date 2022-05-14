@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-// import { VERSION, MatDialogRef, MatSnackBar, MAT_DIALOG_DATA } from '@angular/material';
-import { ConfirmationDialog } from '../dialog/confirmation-dialog-component';
 
 
 @Component({

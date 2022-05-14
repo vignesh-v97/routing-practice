@@ -17,8 +17,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
-import { ConfirmationDialog } from './dialog/confirmation-dialog-component';
 import { FormsModule } from '@angular/forms';
+import { ProductPreviewEntryComponent } from './product-preview/product-preview-entry.component';
+import { PopUpService } from './pop-up/pop-up.service';
+import { ProductPreviewRoutingModule } from './product-preview/product-preview-routing.module';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,12 @@ import { FormsModule } from '@angular/forms';
     CategoryComponent,
     CategoryProductListingComponent,
     ProductPreviewComponent,
+    ProductPreviewEntryComponent,
     AccountsComponent,
     GiftCardComponent,
     CorporateRequirementsComponent,
     NavbarComponent,
     SidebarComponent,
-    ConfirmationDialog
   ],
   imports: [
     BrowserModule,
@@ -40,11 +42,12 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     AccountsRoutingModule,
     BrowserAnimationsModule,
+    ProductPreviewRoutingModule,
     MatDialogModule,
     MatButtonModule,
     MatInputModule
   ],
-  entryComponents: [ConfirmationDialog],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [PopUpService]
 })
 export class AppModule { }

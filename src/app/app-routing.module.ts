@@ -6,6 +6,8 @@ import { CategoryComponent } from './category/category.component';
 import { CorporateRequirementsComponent } from './corporate-requirements/corporate-requirements.component';
 import { GiftCardComponent } from './gift-card/gift-card.component';
 import { HomeComponent } from './home/home.component';
+import { ProductPreviewEntryComponent } from './product-preview/product-preview-entry.component';
+import { ProductPreviewRoutingModule } from './product-preview/product-preview-routing.module';
 import { ProductPreviewComponent } from './product-preview/product-preview.component';
 
 const routes: Routes = [
@@ -23,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'preview',
-    component: ProductPreviewComponent
+    loadChildren: () => import('./product-preview/product-preview-routing.module').then(m => m.ProductPreviewRoutingModule)
   },
   {
     path: 'accounts',
